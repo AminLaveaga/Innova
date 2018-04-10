@@ -21,31 +21,44 @@
 
     <!-- Add your site or application content here -->
     <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+       <div class="navbar navbar-inverse navbar-fixed-top">
+         <div align="center">
+           <img align="middle" href="#" src="images/innovalinea.png">
+         </div>
 
-            <a class="navbar-brand" href="#/">innovaFront</a>
-          </div>
+         <div align="center" class="container-fluid">
+           <div class="navbar-header">
+             <buttom type="buttom" class="navbar-toggle" data-toggle="collapse" data-target="#navbar1">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+             </buttom>
+            <!-- <img class="navbar-brand" href="#" src="images/innovalinea.png">-->
+           </div>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+           <div class="collapse navbar-collapse navbar-right " id="navbar1">
+              <ul class="nav navbar-nav ">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" >Información<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                        <li><a href="#">Show</a></li>
+                        <li><a href="#">Carnaval</a></li>
+                        <li><a class="sr-only" href="#">....</a></li>
 
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+                  </ul>
+                </li>
+                <li><a href="#">Agenda</a></li>
+                <li><a href="#/contrato">Contrato</a></li>
+
+              </ul>
+
+           </div>
+         </div>
+       </div>
+      <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>
     </div>
+
 
     <div class="container">
     <div ng-view=""></div>
@@ -80,6 +93,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
