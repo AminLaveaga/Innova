@@ -1,0 +1,81 @@
+<div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="panel panel-default">
+                  <div class="panel-heading"><div class="form-group"><button ng-click="cerrarVentana()" type="button" class="close" data-dismiss="modal" >
+                    <span class="glyphicon glyphicon-plus-sign"></span> </button><h4>Información sobre evento</h4></div> </div>
+                      <div class="panel-body">
+                        <div class="form-group">
+                          <button id="boton"type="submit" title="Guardar evento!"  ng-click="guardar()" class="btn btn-primary">Guardar</button>
+                          <button id="botonEliminar"type="submit" title="Eliminar evento!"  ng-click="eliminar()" class="btn btn-primary" disabled>Eliminar</button>
+                        </div>
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                  <div class="panel panel-default">
+                                    <div class="panel-body">
+                                      <div class="form-group">
+                                        <div class="well well-sm">Información del contrato</div>
+                                      </div>
+                                      <div class="form-group">
+                                        <ul class="list-group">
+                                          <li class="list-group-item"><b>Número de contrato:</b> {{contrato.id}}</li>
+                                          <li class="list-group-item"><b>Fecha evento:</b> {{contrato.fechaEvento}} &nbsp;&nbsp;&nbsp;<b>  Hora inicio:</b> {{contrato.horaInicio}} </li>
+                                          <li class="list-group-item"><b>Nombre contratante:</b> {{contrato.nombreCliente}}&nbsp;&nbsp;&nbsp;   <b>  Télefono:</b> {{contrato.telefonoCliente}} </li>
+                                          <li class="list-group-item"><b>Evento :</b> {{contrato.tipoEvento}}&nbsp;&nbsp;&nbsp;<b>De:</b>{{contrato.festejados}}&nbsp;&nbsp;&nbsp;<b>Lugar:</b>{{contrato.lugar}}</li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                              <div class="panel panel-default">
+                                <div class="panel-body">
+                                  <div class="form-group">
+                                    <div class="well well-sm">Actividades del Evento</div>
+                                  </div>
+                                  <div class="form-group">
+                                    <table class="table table-striped">
+                                      <thead>
+                                      <tr>
+                                        <th>Hora:</th> <th>Actividad</th> <th>Información</th> <th>Agregar/Eliminar</th> </tr>
+                                      </thead>
+                                      <tbody>
+                                      <tr ng-repeat="actividad in actividades" >
+                                        <td><span ng-if="$index==0||$index==actividades.length-1"><input class="form-control" ng-model="actividad.hora" disabled></span><span ng-if="$index!=0&&$index!=actividades.length-1">
+                                          <input class="form-control" ng-model="actividad.hora"></span></td>
+                                        <td><span ng-if="$index==0||$index==actividades.length-1"><input class="form-control" ng-model="actividad.nombre" disabled></span><span ng-if="$index!=0&&$index!=actividades.length-1">
+                                          <input class="form-control" ng-model="actividad.nombre"></span></td>
+                                        <td><input class="form-control" ng-model="actividad.informacion"></td>
+                                        <td>
+                                        <span ng-if="$index!=actividades.length-1">
+                                            <div data-toggle="tooltip" title="Agregar actividad!" ng-click="agregarActividad($index)" class="badge"><span class="glyphicon glyphicon-plus-sign"></span></div>
+                                             <span ng-if="$index!=0"><div data-toggle="tooltip" title="eliminar actividad!" ng-click="eliminarActividad($index)" class="badge"><span class="glyphicon glyphicon-minus-sign"></span></div></span>
+                                        </span>
+                                        </td>
+                                      </tr>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>
+                           </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6" >
+                              <div class="panel panel-default">
+                                <div class="panel-body">
+                                  <div class="form-group">
+                                    <div class="well well-sm">Canciones seleccionadas</div>
+                                    <button type="button" class="btn btn-default btn-sm"  ng-click="modalRepertorio()">
+                                      <span class="glyphicon glyphicon-plus-sign"></span> Agregar
+                                    </button>
+                                    <div ng-repeat="cancionesPorGenero in cancionesAFiltrarSeleccion() | filter:filtrarGenerosSeleccion">
+                                      <h4><b><ins>{{cancionesPorGenero.genero}}</ins></b> </h4>
+                                      <li ng-repeat="cancion in listaSeleccion | filter:{genero: cancionesPorGenero.genero}"> {{cancion.nombre}}&nbsp;   <b>  Interprete:&nbsp;</b> {{cancion.interprete}}&nbsp;<span title="Eliminar cancion!" ng-click="eliminarCancion($index)" class="glyphicon glyphicon-minus"></span></li>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                </div>
+          </div>
+        </div>
+</div>

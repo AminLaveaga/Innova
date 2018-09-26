@@ -8,6 +8,8 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -20,7 +22,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header">
+    <div class="header" >
 
        <div class="navbar navbar-inverse navbar-fixed-top">
          <div align="center">
@@ -39,7 +41,7 @@
 
            <div class="collapse navbar-collapse navbar-right " id="navbar1">
               <ul class="nav navbar-nav ">
-                <li class="dropdown">
+                <!--<li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" >Información<span class="caret"></span></a>
                   <ul class="dropdown-menu">
                         <li><a href="#">Show</a></li>
@@ -47,9 +49,11 @@
                         <li><a class="sr-only" href="#">....</a></li>
 
                   </ul>
-                </li>
-                <li><a href="#">Agenda</a></li>
+                </li>-->
+                <li><a href="#/agenda">Agenda</a></li>
                 <li><a href="#/contrato">Contrato</a></li>
+                <li><a href="#/repertorio">Repertorio</a></li>
+                <li><a href="#/evento">Evento</a></li>
 
               </ul>
 
@@ -60,15 +64,15 @@
     </div>
 
 
-    <div class="container">
+    <div class="container-fluid">
     <div ng-view=""></div>
     </div>
 
-    <div class="footer">
+   <!-- <div class="footer">
       <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+       <!-- <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
       </div>
-    </div>
+    </div>-->
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -94,13 +98,40 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/fullcalendar/dist/fullcalendar.js"></script>
+    <script src="bower_components/angular-ui-calendar/src/calendar.js"></script>
+    <script src="bower_components/checklist-model/checklist-model.js"></script>
+    <script src="bower_components/es/index.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+
+       <!-- //CONTROLLERS-->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/contrato.js"></script>
+        <script src="scripts/controllers/agenda.js"></script>
+        <script src="scripts/controllers/observarContrato.js"></script>
+        <script src="scripts/controllers/observarContratoAgenda.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/cancion.js"></script>
+        <script src="scripts/controllers/evento.js"></script>
+    <script src="scripts/controllers/eventoCatalogo.js"></script>
+        <script src="scripts/controllers/seleccionarLista.js"></script>
+       <!-- //SERVICES-->
+        <script src="scripts/services/contrato.js"></script>
+        <script src="scripts/services/cancion.js"></script>
+        <script src="scripts/services/login.js"></script>
+        <script src="scripts/services/evento.js"></script>
         <!-- endbuild -->
-</body>
+
+
+    </body>
 </html>
+

@@ -1,5 +1,4 @@
 'use strict';
-
 /**
  * @ngdoc overview
  * @name innovaFrontApp
@@ -9,32 +8,45 @@
  * Main module of the application.
  */
 angular
-  .module('innovaFrontApp', [
+  .module('innovaFrontApp',[
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.bootstrap',
+    'ui.calendar',
+    'checklist-model'
   ])
   .config(function ($routeProvider,$locationProvider) {
     $locationProvider.hashPrefix('');
     $routeProvider
 
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+        templateUrl: 'views/login.html',
+        controller: 'loginCtrl',
+        controllerAs: ''
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/repertorio', {
+        templateUrl: 'views/repertorio.html',
+        controller: 'cancionCtrl'
       })
+
       .when('/contrato',{
         templateUrl:'views/contrato.html',
+        controller:'contratoCtrl',
+
       })
-      .otherwise({
+      .when('/evento',{
+                templateUrl:'views/eventoCatalogo.html',
+                controller:'eventoCatalogoCtrl',
+
+              })
+              .when('/agenda',{
+        templateUrl:'views/agenda.html',
+        controller:'agendaCtrl'
+      }).otherwise({
         redirectTo: '/'
       });
   });

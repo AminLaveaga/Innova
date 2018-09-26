@@ -1,0 +1,63 @@
+<div class="container-fluid">
+  <h2><b><u>Repertorio</u></b></h2><br><br>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading"><div class="form-group"><h4>Información Canción</h4></div></div>
+        <div class="panel-body">
+          <form >
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                    <input id="nombrecancion" ng-model="cancion.nombre" placeholder="Nombre Canción" title="Nombre canción" class="form-control" >
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input id="interprete"  title="Intérprete"  placeholder="Intérprete" ng-model="cancion.interprete" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-music"></i></span>
+                    <input id="genero" title="Género" placeholder="Género" ng-model="cancion.genero" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <button id="boton"type="submit"  ng-click="guardarCancion()" class="btn btn-primary">Guardar</button>
+                </div>
+          </form>
+        </div>
+      </div>
+    </div><!--primercol-->
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading"><div class="form-group"><h4>Canciones</h4></div></div>
+        <div class="panel-body">
+          <input class="form-control" id="filtar" placeholder="Buscar en tabla de canciones" ng-model="filtrarCanciones">
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>ID</th> <th>Nombre</th> <th>Intérprete</th> <th>Género</th><th>Acciones</th>
+            </thead>
+            <tbody>
+            <tr ng-repeat="cancion in canciones |filter:filtrarCanciones">
+              <td ng-bind="cancion.id"></td>
+              <td ng-bind="cancion.nombre"></td>
+              <td ng-bind="cancion.interprete"></td>
+              <td ng-bind="cancion.genero"></td>
+              <td>
+                <div data-toggle="tooltip" title="Modificar canción!" ng-click="traerPorId(cancion.id)" class="badge"><span class="glyphicon glyphicon-edit"></span></div>
+                <div data-toggle="tooltip" title="Eliminar!" ng-click="eliminarCancion(cancion.id)" class="badge"><span class="glyphicon glyphicon-trash"></span></div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div><!--row-->
+</div><!--container-->
+

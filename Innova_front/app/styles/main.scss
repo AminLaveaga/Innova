@@ -75,7 +75,7 @@ body {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    /*max-width: 730px;*/
   }
 
   /* Remove the padding we set earlier */
@@ -93,4 +93,41 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+span.input-group-addon span{
+  width: 20px;
+}
+
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 95% !important;
+    margin: 30px auto;
+  }
+  .modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+  }
+  .modal-sm {
+    width: 300px!important;
+  }
+}
+@media (min-width: 992px) {
+  .modal-lg {
+    width: 900px !important;
+  }
+}
+
+.panel-default > .panel-heading {
+  color: White !important;
+  background-color:  #333333 !important;
+  border-color: black !important;
+  padding:5px 10px !important;
+}
+
+.well{
+  color: White !important;
+  padding: 2px !important;
+  margin-bottom: 5px !important;
+  background-color: #333333 !important;
 }

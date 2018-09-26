@@ -1,0 +1,151 @@
+<div class="col-md-6">
+
+  <div class="panel panel-default">
+    <div class="panel-heading"><div class="form-group"><h4>Contrato</h4></div></div>
+    <div class="panel-body">
+      <form >
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="form-group">
+              <h5>Información del contratante</h5>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input class="form-control"  title="Contratante"  ng-model="contrato.nombreCliente" type="text" placeholder="Nombre" disabled>
+
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
+                <input id="telefono" ng-model="contrato.telefonoCliente" placeholder="Télefono Contratante" title="Télefono Contratante" class="form-control" type="tel" disabled>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="form-group">
+              <h5><div class="form-group"><h4>Contrato</h4></div></h5>
+            </div>
+
+
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-equalizer"></i></span>
+                <select id="tipo" tittle="Hora de inicio"  class="form-control" name="inicio" ng-model="contrato.tipoEvento" disabled>
+                  <option value="" disabled>-Seleccione tipo de evento-</option>
+                  <option value="Boda">Boda</option>
+                  <option value="XV">XV</option>
+                  <option value="Cumpleaños">Cumpleaños</option>
+                  <option value="Graduación">Graduación</option>
+                  <option value="Posada">Posada</option>
+                  <option value="Reunion">Reunión</option>
+                </select>
+
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-gift"></i></span>
+                <input disabled id="festejados" ng-model="contrato.festejados" placeholder="Nombre de festejado/a(s)" title="Nombre de festejado/a(s)" class="form-control" type="tel">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                <input id="diaevento" title="Día del Evento" placeholder="Día del Evento" ng-model="fechaEvento" type="date" class="form-control" disabled>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                <input id="lugar"  title="Lugar del evento"  placeholder="Lugar del evento" ng-model="contrato.lugar" class="form-control" disabled>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                <select id="inicio" tittle="Hora de inicio"  class="form-control" name="inicio"  ng-model="contrato.horaInicio" disabled>
+                  <option value="" disabled>-Hora de inicio-</option>
+                  <option ng-repeat="opcion in horas" value="{{opcion.hora}}">{{opcion.hora}}</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                <input id="horasshow" title="Horas de show" placeholder="Horas de show" ng-model="contrato.duracionEvento" class="form-control" disabled>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+                <div class="form-group">
+                  <input id="costototal" ng-model="contrato.cantidadTotal" title="Costo Total" placeholder="Costo Total" ng-change="formato_costoTotal()" type="text" class="form-control" disabled>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+                <input id="costototaltexto" ng-model="contrato.cantidadTotalTexto" title="Costo total escrito" placeholder="Costo total escrito" class="form-control" disabled>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i> </span>
+                <input id="enganche" title="Enganche" placeholder="Enganche" ng-model="contrato.enganche" ng-change="formato_enganche()" class="form-control" disabled>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i>:</span>
+                <input id="resto" title="Resto" placeholder="Resto" ng-model="contrato.resto" class="form-control" disabled>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                <input id="fechacontrato" title="Fecha de contratación" placeholder="Fecha de contratación" ng-model="fechaContratacion" type="date" class="form-control" disabled>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <button   ng-click="cerrarVentana()" class="btn btn-primary">Cerrar</button>
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+
+
+</div>

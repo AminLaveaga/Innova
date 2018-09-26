@@ -1,0 +1,23 @@
+<div class="container-fuid">
+    <row>
+       <div class="col-xs-12 col-sm-12 col-md-12">
+         <div class="panel panel-default">
+
+           <div class="panel-heading"><div class="form-group"><button ng-click="cerrarVentana()" type="button" class="close" data-dismiss="modal" ><div></div><span class="glyphicon glyphicon-plus-sign"></span> </button><h4>Canciones</h4></div> </div>
+               <div ng-repeat="cancionesPorGenero in $parent.cancionesAFiltrar() | filter:$parent.filtrarGeneros">
+                 <div class="well well-sm">--{{cancionesPorGenero.genero}}</div>
+                 <li ng-repeat="cancion in $parent.canciones | filter:{genero: cancionesPorGenero.genero}"> <b>  Nombre:&nbsp;</b>{{cancion.nombre}}&nbsp;   <b>  Interprete:&nbsp;</b> {{cancion.interprete}}&nbsp;<input type="checkbox" data-checklist-model="$parent.listaSeleccion" data-checklist-value="cancion"></li>
+               </div>
+
+
+
+         </div>
+
+       </div>
+    </row>
+
+</div>
+
+
+
+

@@ -10,7 +10,13 @@
     "angular-route": "^1.4.0",
     "angular-sanitize": "^1.4.0",
     "angular-touch": "^1.4.0",
-    "angular-local-storage": "^0.7.1"
+    "angular-local-storage": "^0.7.1",
+    "bootstrap-timepicker": "^0.5.2",
+    "angular-bootstrap": "^2.5.0",
+    "moment": "^2.22.1",
+    "angular-ui-calendar": "^1.0.2",
+    "checklist-model": "^1.0.0",
+    "es": "C:\\Users\\LASA_01\\Documents\\Innova_app\\Innova_front\\bower_components\\fullcalendar\\dist\\lang\\es.js"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"
